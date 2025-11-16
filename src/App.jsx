@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <login-page currentTheme={theme} onToggleTheme={toggleTheme} />
+      <LoginPage currentTheme={theme} onToggleTheme={toggleTheme} />
     </div>
   );
 }
