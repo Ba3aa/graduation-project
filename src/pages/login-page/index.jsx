@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./login-page.css";
 
 function LoginPage({ onToggleTheme }) {
