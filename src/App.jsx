@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import LoginPage from "./pages/loginpage";
+import LoginPage from "./pages/login-page";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <LoginPage onToggleTheme={toggleTheme} />
+      <login-page currentTheme={theme} onToggleTheme={toggleTheme} />
     </div>
   );
 }
