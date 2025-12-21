@@ -1,0 +1,178 @@
+.date-picker-wrapper {
+    position: relative;
+    width: 100%;
+    font-family: inherit;
+}
+
+/* Input Field Styling to match form */
+.date-picker-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-bg, #fff);
+    border: 2px solid var(--color-border, #e5e7eb);
+    border-radius: 10px;
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--color-text-primary, #333);
+}
+
+.date-picker-input-container:hover {
+    border-color: var(--color-primary-accent, #3b82f6);
+}
+
+.date-picker-input-container.has-error {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+}
+
+.date-display {
+    font-size: 0.95rem;
+}
+
+.date-display.placeholder {
+    color: #9ca3af;
+}
+
+/* Calendar Dropdown - Glassmorphism */
+.calendar-dropdown {
+    /* Arabic Comment: رفع التقويم للأعلى أكثر ليظهر بشكل أفضل بجانب الحقل */
+    position: absolute;
+    top: -150px;
+    bottom: auto;
+    left: auto;
+    right: 100%;
+    margin-right: 10px;
+    width: 210px;
+    background-color: var(--color-surface, #fff);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    padding: 12px;
+    z-index: 100;
+    animation: slide-down 0.2s ease-out;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    color: var(--color-text-primary, #333);
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    color: var(--color-text-secondary, #666);
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    font-size: 0.9rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--color-primary-accent, #3b82f6);
+}
+
+.weekdays-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-text-secondary, #888);
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.day-cell {
+    height: 26px;
+    width: 26px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: var(--color-text-primary, #333);
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+/* Hover Effect */
+.day-cell:not(.empty):hover {
+    background-color: var(--color-primary-accent-translucent, rgba(59, 130, 246, 0.1));
+    color: var(--color-primary-accent, #3b82f6);
+    transform: scale(1.1);
+    box-shadow: 0 0 8px var(--color-primary-accent-translucent, rgba(59, 130, 246, 0.2));
+    z-index: 1;
+}
+
+/* Selected Date Style */
+.day-cell.selected {
+    background-color: var(--color-primary-accent, #3b82f6);
+    color: #fff;
+    font-weight: bold;
+    animation: pulse-selection 2s infinite;
+}
+
+.day-cell.today {
+    border: 1px solid var(--color-primary-accent, #3b82f6);
+    color: var(--color-primary-accent, #3b82f6);
+}
+
+.day-cell.empty {
+    cursor: default;
+    pointer-events: none;
+}
+
+/* --- Animations (Arabic Comments) --- */
+
+/* تأثير النبض عند اختيار التاريخ */
+@keyframes pulse-selection {
+    0% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 6px rgba(59, 130, 246, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+}
+
+/* حركة القائمة المنسدلة */
+@keyframes slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

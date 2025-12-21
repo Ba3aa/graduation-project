@@ -3,21 +3,25 @@
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
 @keyframes slideDown {
   from { opacity: 0; transform: translateY(-40px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
   10%, 30%, 50%, 70%, 90% { transform: translateX(-6px); }
   20%, 40%, 60%, 80% { transform: translateX(6px); }
 }
+
 @keyframes monitor {
   0%, 100% { transform: translate(1px, -1px); }
   25% { transform: translate(-2px, 1px); }
   50% { transform: translate(2px, 2px); }
   75% { transform: translate(0px, -2px); }
 }
+
 @keyframes blink {
   0%, 100% { transform: scaleY(1); }
   50% { transform: scaleY(0.1); }
@@ -33,7 +37,7 @@
 
 .login-form {
   background: var(--color-form-bg);
-  border: 1px solid var(--color-form-bg); 
+  border: 1px solid var(--color-form-bg);
   padding: 2.5rem 3rem;
   border-radius: 10px;
   box-shadow: 0 10px 40px var(--color-shadow);
@@ -43,12 +47,13 @@
   animation: slideDown 0.7s ease-out forwards;
   transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
+
 .login-form h2 {
   text-align: center;
   color: var(--color-text-primary);
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  font-weight: 300; 
+  font-weight: 300;
   transition: color 0.4s ease;
 }
 
@@ -56,6 +61,7 @@
   margin-bottom: 1rem;
   position: relative;
 }
+
 .input-group label {
   display: block;
   margin-bottom: 0.5rem;
@@ -65,19 +71,21 @@
   text-align: left;
   transition: color 0.4s ease;
 }
+
 .input-group input {
   width: 100%;
   padding: 0.8rem 1rem;
-  padding-right: 3rem; 
+  padding-right: 3rem;
   border: 2px solid var(--color-border);
   border-radius: 8px;
   box-sizing: border-box;
-  background: var(--color-bg); 
+  background: var(--color-bg);
   color: var(--color-text-primary);
   font-size: 1rem;
   transition: all 0.4s ease;
   text-align: left;
 }
+
 .input-group input:focus {
   outline: none;
   border-color: var(--color-primary-accent);
@@ -94,34 +102,39 @@ button {
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
-  position: relative; 
-  overflow: hidden; 
+  position: relative;
+  overflow: hidden;
   transition: all 0.4s ease;
-  margin-top: 1rem; 
+  margin-top: 1rem;
 }
+
 button::before {
   content: '';
   position: absolute;
   top: 0;
-  left: -100%; 
+  left: -100%;
   width: 75%;
   height: 100%;
   background: linear-gradient(90deg, transparent, var(--color-shimmer), transparent);
-  transform: skewX(-25deg); 
-  transition: left 0.7s ease-in-out; 
+  transform: skewX(-25deg);
+  transition: left 0.7s ease-in-out;
 }
+
 button:hover::before {
-  left: 150%; 
+  left: 150%;
 }
+
 button:hover {
-  transform: translateY(-3px); 
+  transform: translateY(-3px);
   background: var(--color-text-primary);
   box-shadow: 0 5px 15px var(--color-shadow);
 }
+
 .dark button:hover {
   background: var(--color-primary-accent);
   filter: brightness(1.2);
 }
+
 button:disabled {
   background: var(--color-border);
   color: var(--color-bg);
@@ -158,8 +171,9 @@ button:disabled {
   cursor: pointer;
   position: relative;
   user-select: none;
-  padding-left: 30px; 
+  padding-left: 30px;
 }
+
 .remember-me input {
   position: absolute;
   opacity: 0;
@@ -167,16 +181,19 @@ button:disabled {
   height: 0;
   width: 0;
 }
+
+
 .slider {
   position: absolute;
   left: 0;
   top: 2px;
   height: 16px;
   width: 26px;
-  background-color: var(--color-border);
+  background-color: #ccc;
   border-radius: 15px;
   transition: 0.4s;
 }
+
 .slider:before {
   position: absolute;
   content: "";
@@ -188,11 +205,18 @@ button:disabled {
   border-radius: 50%;
   transition: 0.4s;
 }
+
 .remember-me input:checked + .slider {
   background-color: var(--color-primary-accent);
 }
+
 .remember-me input:checked + .slider:before {
   transform: translateX(10px);
+}
+
+
+.dark .slider {
+  background-color: #4a5568;
 }
 
 .forgot-password {
@@ -201,6 +225,7 @@ button:disabled {
   position: relative;
   transition: color 0.4s ease;
 }
+
 .forgot-password::after {
   content: '';
   position: absolute;
@@ -213,9 +238,11 @@ button:disabled {
   transform-origin: bottom right;
   transition: transform 0.3s ease-out;
 }
+
 .forgot-password:hover {
   color: var(--color-text-primary);
 }
+
 .forgot-password:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
@@ -230,11 +257,13 @@ button:disabled {
   grid-template-columns: 1fr 1fr;
   gap: 0.5rem;
 }
+
 .password-criteria li {
   transition: color 0.4s ease;
   position: relative;
   padding-left: 20px;
 }
+
 .password-criteria li::before {
   content: '•';
   position: absolute;
@@ -244,16 +273,20 @@ button:disabled {
   line-height: 1.1;
   transition: color 0.4s ease;
 }
+
 .password-criteria li.invalid {
   color: var(--color-invalid);
 }
+
 .password-criteria li.invalid::before {
   color: var(--color-invalid);
 }
+
 .password-criteria li.valid {
   color: var(--color-valid);
   font-weight: bold;
 }
+
 .password-criteria li.valid::before {
   content: '✔';
   color: var(--color-valid);
@@ -262,15 +295,17 @@ button:disabled {
 
 .password-toggle-icon {
   position: absolute;
-  top: 40px; 
+  top: 40px;
   right: 1rem;
   cursor: pointer;
   color: var(--color-text-secondary);
   transition: color 0.4s ease;
 }
+
 .password-toggle-icon:hover {
   color: var(--color-primary-accent);
 }
+
 .password-toggle-icon svg {
   width: 20px;
   height: 20px;
@@ -280,10 +315,12 @@ button:disabled {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
 .password-toggle-icon .eye-pupil {
   fill: currentColor;
   animation: monitor 4s ease-in-out infinite;
 }
+
 .password-toggle-icon.blinking {
   animation: blink 0.3s ease-in-out;
 }
@@ -307,15 +344,17 @@ button:disabled {
   box-shadow: 0 4px 10px var(--color-shadow);
   transition: all 0.4s ease;
 }
+
 .theme-toggle-button:hover {
-  transform: none; 
+  transform: none;
   box-shadow: 0 4px 15px var(--color-shadow);
   background: var(--color-form-bg);
   filter: brightness(1.1);
   transform: rotate(15deg) scale(1.1);
 }
+
 .theme-toggle-button::before {
-  display: none; 
+  display: none;
 }
 
 .theme-icon {
@@ -324,6 +363,7 @@ button:disabled {
   position: relative;
   transition: transform 0.4s ease;
 }
+
 .theme-icon .sun,
 .theme-icon .moon {
   position: absolute;
@@ -334,13 +374,16 @@ button:disabled {
   stroke-linejoin: round;
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
+
 .light .theme-icon {
   transform: rotate(0deg);
 }
+
 .light .theme-icon .sun {
   opacity: 1;
   transform: rotate(0deg) scale(1);
 }
+
 .light .theme-icon .moon {
   opacity: 0;
   transform: rotate(90deg) scale(0);
@@ -349,10 +392,12 @@ button:disabled {
 .dark .theme-icon {
   transform: rotate(360deg);
 }
+
 .dark .theme-icon .sun {
   opacity: 0;
   transform: rotate(-90deg) scale(0);
 }
+
 .dark .theme-icon .moon {
   opacity: 1;
   transform: rotate(0deg) scale(1);

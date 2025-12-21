@@ -1,0 +1,218 @@
+.home-page {
+  padding: 40px;
+  min-height: 100vh;
+  max-width: 1600px;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  /* Small margin as requested */
+  color: var(--color-text-primary);
+  letter-spacing: -0.5px;
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--color-primary-accent);
+  border-radius: 2px;
+}
+
+/* --- Cards Section --- */
+.stats-cards {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+/* From Uiverse.io by Yaseen549 */
+.card {
+  width: 220px;
+  aspect-ratio: 1 / 1;
+  border-radius: 30px;
+  background: var(--color-surface);
+  box-shadow: 15px 15px 30px var(--color-shadow),
+    -15px -15px 30px var(--color-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-content h3 {
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--color-primary-accent);
+  line-height: 1;
+}
+
+/* --- Main Dashboard Layout --- */
+.dashboard-vertical-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.table-container {
+  background-color: color-mix(in srgb, var(--color-surface), transparent 10%);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-card);
+  padding: 32px;
+  box-shadow: 0 10px 30px -5px var(--color-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table-container h3 {
+  color: var(--color-text-primary);
+  font-size: 24px;
+  margin-bottom: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* --- Table Styling --- */
+.recent-sessions-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.recent-sessions-table th {
+  text-align: left;
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 16px 24px;
+  border-bottom: 2px solid var(--color-form-bg);
+}
+
+.recent-sessions-table td {
+  padding: 20px 24px;
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-form-bg);
+  transition: background-color 0.2s ease;
+  font-weight: 500;
+}
+
+.recent-sessions-table tr:last-child td {
+  border-bottom: none;
+}
+
+.recent-sessions-table tr:hover td {
+  background-color: var(--color-form-bg);
+}
+
+.dashboard-horizontal-layout {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.chart-section {
+  flex: 3;
+}
+
+.calendar-section {
+  flex: 2;
+}
+
+/* --- Chart Section Styles --- */
+.chart-card {
+  background: var(--color-surface);
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px -5px var(--color-shadow);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.chart-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--color-text-primary);
+}
+
+.chart-header p {
+  margin: 4px 0 0;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.chart-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.chart-filter-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.chart-filter-btn:hover {
+  border-color: var(--color-primary-accent);
+  color: white;
+  background: var(--color-primary-accent);
+  transform: translateY(-2px);
+}
+
+.chart-filter-btn.active {
+  border-color: var(--color-primary-accent);
+  background: var(--color-primary-accent);
+  color: white;
+}
+
+.chart-wrapper {
+  width: 100%;
+  height: 300px;
+}
